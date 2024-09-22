@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Controle de Frequência</h1>
+            <ul class="navbar-links">
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Menu Lateral -->
+        <aside class="sidebar">
+            <ul class="menu">
+                <li><a href="#">Alunos</a></li>
+                <li><a href="#">Turmas</a></li>
+                <li><a href="#">Incluir Notas</a></li>
+                <li><a href="#">Verificar Notas</a></li>
+            </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h2>Bem-vindo(a)!</h2>
+            <p>Selecione uma das opções do menu lateral para começar.</p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+          <strong>Controle de Frequência</strong> apresentado para a disciplina de PI II do Eixo Computação da
+            <a href="https://univesp.br/" target="_blank">UNIVESP</a>
+        </p>
+    </footer>
+</body>
+</html>
