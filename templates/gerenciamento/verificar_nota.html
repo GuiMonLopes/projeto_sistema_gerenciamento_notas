@@ -1,0 +1,54 @@
+{% extends 'gerenciamento/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <!-- Menu Lateral -->
+        {% include 'gerenciamento/partials/_menu_lateral.html'%}
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h2>Verificar Notas da Turma</h2>
+
+            <!-- Seleção de Turma -->
+            <form action="#" method="POST" class="grades-check-form">
+                <label for="turma">Selecione a Turma:</label>
+                <select id="turma" name="turma">
+                    <option value="turma1">Turma 1</option>
+                    <option value="turma2">Turma 2</option>
+                    <option value="turma3">Turma 3</option>
+                </select>
+            </form>
+
+            <!-- Tabela de Notas -->
+            <table class="grades-table">
+                <thead>
+                    <tr>
+                        <th>Nome do Aluno</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maria Silva</td>
+                        <td>8.5</td>
+                    </tr>
+                    <tr>
+                        <td>João Oliveira</td>
+                        <td>7.0</td>
+                    </tr>
+                    <tr>
+                        <td>Ana Souza</td>
+                        <td>9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos Mendes</td>
+                        <td>6.5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </main>
+    </div>
+
+{% endblock %}
+

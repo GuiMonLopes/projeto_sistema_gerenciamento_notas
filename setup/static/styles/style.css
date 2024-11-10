@@ -368,13 +368,19 @@ body {
     font-weight: bold;
 }
 
-.signup-form input {
+.signup-form input,
+.signup-form select { /* Estilos aplicados tanto a input quanto a select */
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.signup-form select {
+    appearance: none; /* Remove o estilo padrão do select em navegadores compatíveis */
 }
 
 .signup-form button {

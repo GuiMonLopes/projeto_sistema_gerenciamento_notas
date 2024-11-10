@@ -1,0 +1,30 @@
+{% extends 'gerenciamento/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <!-- Menu Lateral -->
+        {% include 'gerenciamento/partials/_menu_lateral.html'%}
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h2>Incluir Aluno</h2>
+            <form action="#" method="POST" class="student-form">
+                <label for="nome">Nome do Aluno:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+                <label for="turma">Turma:</label>
+                <input type="text" id="turma" name="turma" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <button type="submit">Incluir Aluno</button>
+            </form>
+        </main>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'gerenciamento/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <!-- Menu Lateral -->
+        {% include 'gerenciamento/partials/_menu_lateral.html'%}
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h2>Incluir Notas para a Turma</h2>
+
+            <!-- Seleção de Turma -->
+            <form action="#" method="POST" class="grades-form">
+                <label for="turma">Selecione a Turma:</label>
+                <select id="turma" name="turma">
+                    <option value="turma1">Turma 1</option>
+                    <option value="turma2">Turma 2</option>
+                    <option value="turma3">Turma 3</option>
+                </select>
+
+                <table class="grades-table">
+                    <thead>
+                        <tr>
+                            <th>Nome do Aluno</th>
+                            <th>Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maria Silva</td>
+                            <td><input type="number" name="nota_maria" min="0" max="10" step="0.1" required></td>
+                        </tr>
+                        <tr>
+                            <td>João Oliveira</td>
+                            <td><input type="number" name="nota_joao" min="0" max="10" step="0.1" required></td>
+                        </tr>
+                        <tr>
+                            <td>Ana Souza</td>
+                            <td><input type="number" name="nota_ana" min="0" max="10" step="0.1" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="submit">Salvar Notas</button>
+            </form>
+        </main>
+    </div>
+
+{% endblock %}

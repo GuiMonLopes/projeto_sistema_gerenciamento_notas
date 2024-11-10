@@ -25,9 +25,16 @@
                 <label for="confirm_password">Confirme a Senha:</label>
                 <input type="password" id="confirm_password" name="confirm_password" required>
 
+                <!-- Campo para selecionar o tipo de usuário -->
+                <label for="user_type">Tipo de Usuário:</label>
+                <select id="user_type" name="user_type" required>
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                </select>
+
                 <button type="submit">Cadastrar</button>
 
-                <p class="login-link">Já tem uma conta? <a href="#">Entrar</a></p>
+                <p class="login-link">Já tem uma conta? <a href="{% url 'login'%}">Entrar</a></p>
             </form>
         </div>
     </div>
