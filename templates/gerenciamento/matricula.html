@@ -1,0 +1,33 @@
+{% extends 'gerenciamento/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <!-- Menu Lateral -->
+        {% include 'gerenciamento/partials/_menu_lateral.html' %}
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h2>Incluir Matrícula</h2>
+
+            <!-- Formulário de Matrícula -->
+            <form action="{% url 'matricula' %}" method="POST">
+                {% csrf_token %}
+                
+                <label for="aluno">Selecione o Aluno:</label>
+                <select name="aluno" id="aluno" class="form-control">
+                    {% for aluno in alunos %}
+                        <option value="{{ aluno.id }}">{{ aluno.nome }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="turma">Selecione a Turma:</label>
+                <select name="turma" id="turma" class="form-control">
+                    {% for turma in turmas %}
+                        <option value="{{ turma.id }}">{{ turma.nome }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Incluir Matrícula</button>
+            </form>
+        </main>
+    </div>
+{% endblock %}

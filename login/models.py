@@ -5,6 +5,7 @@ class Aluno(models.Model):
     data_nascimento = models.DateField()
     email = models.EmailField(unique=True)
     telefone = models.CharField(max_length=15, blank=True, null=True)
+    turma = models.ForeignKey('gerenciamento.Turma', on_delete=models.SET_NULL, null=True)  # Relacionamento com Turma
 
     def __str__(self):
         return self.nome
@@ -15,4 +16,4 @@ class Professor(models.Model):
     especialidade = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"Professor: {self.usuario.username}"
+        return self.nome

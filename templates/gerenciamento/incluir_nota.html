@@ -10,11 +10,12 @@
 
             <!-- Seleção de Turma -->
             <form action="#" method="POST" class="grades-form">
+                {% csrf_token %}
                 <label for="turma">Selecione a Turma:</label>
                 <select id="turma" name="turma">
-                    <option value="turma1">Turma 1</option>
-                    <option value="turma2">Turma 2</option>
-                    <option value="turma3">Turma 3</option>
+                    {% for turma in turmas %}
+                        <option value="{{ turma.id }}">{{ turma.nome }}</option>
+                    {% endfor %}
                 </select>
 
                 <table class="grades-table">
@@ -25,18 +26,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for aluno in alunos %}
                         <tr>
-                            <td>Maria Silva</td>
-                            <td><input type="number" name="nota_maria" min="0" max="10" step="0.1" required></td>
+                            <td>{{ aluno.nome }}</td>
+                            <td><input type="number" name="nota_{{ aluno.id }}" min="0" max="10" step="0.1" required></td>
                         </tr>
-                        <tr>
-                            <td>João Oliveira</td>
-                            <td><input type="number" name="nota_joao" min="0" max="10" step="0.1" required></td>
-                        </tr>
-                        <tr>
-                            <td>Ana Souza</td>
-                            <td><input type="number" name="nota_ana" min="0" max="10" step="0.1" required></td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
 

@@ -8,17 +8,18 @@
         <main class="content">
             <h2>Incluir Nova Turma</h2>
             <form action="#" method="POST" class="class-form">
+                {% csrf_token %}
                 <label for="nome_turma">Nome da Turma:</label>
-                <input type="text" id="nome_turma" name="nome_turma" required>
+                {{ form.nome }}
 
                 <label for="professor_responsavel">Professor Responsável:</label>
-                <input type="text" id="professor_responsavel" name="professor_responsavel" required>
+                {{ form.professor }}
 
-                <label for="horario">Horário:</label>
-                <input type="text" id="horario" name="horario" placeholder="Ex: Segundas e Quartas, 14:00 - 16:00" required>
+                <label for="ano">Ano:</label>
+                {{ form.ano }}
 
-                <label for="sala">Sala:</label>
-                <input type="text" id="sala" name="sala" required>
+                <label for="periodo">Período:</label>
+                {{ form.periodo }}
 
                 <button type="submit">Incluir Turma</button>
             </form>

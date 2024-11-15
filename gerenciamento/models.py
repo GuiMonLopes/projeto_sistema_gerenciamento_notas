@@ -19,7 +19,7 @@ class Matricula(models.Model):
         return f"Matrícula: {self.aluno.usuario.username} na turma {self.turma.nome}"
 
 class Nota(models.Model):
-    matricula = models.ForeignKey(Matricula, on_delete=models.CASCADE)
+    turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
     nota = models.DecimalField(max_digits=4, decimal_places=2)  # Ex.: 7.5, 9.0, etc.
     data_atribuicao = models.DateField(auto_now_add=True)
 

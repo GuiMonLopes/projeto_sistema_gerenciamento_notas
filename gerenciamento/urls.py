@@ -1,5 +1,5 @@
 from django.urls import path
-from gerenciamento.views import index, incluir_nota, verificar_nota, alunos, turmas
+from gerenciamento.views import index, incluir_nota, verificar_nota, alunos, turmas, matricula
 
 urlpatterns = [
     path('', index, name='gerenciamento'),
@@ -7,4 +7,5 @@ urlpatterns = [
     path('verificar_nota/', verificar_nota, name='verificar_nota'),
     path('alunos/', alunos, name='alunos'),
     path('turmas/', turmas, name='turmas'),
+    path('matricula/', matricula, name='matricula'),
 ]
