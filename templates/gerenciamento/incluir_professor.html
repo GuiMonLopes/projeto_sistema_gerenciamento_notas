@@ -1,0 +1,40 @@
+{% extends 'gerenciamento/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <!-- Menu Lateral -->
+    {% include 'gerenciamento/partials/_menu_lateral.html' %}
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <h2>Incluir Professor</h2>
+
+        <!-- Formulário de Inclusão -->
+        <form action="{% url 'incluir_professor' %}" method="POST" class="form-incluir-professor">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="especialidade">Especialidade:</label>
+                <input type="text" id="especialidade" name="especialidade" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+
+        <!-- Mensagem de Sucesso -->
+        {% if sucesso %}
+            <p class="success-message">Professor incluído com sucesso!</p>
+        {% endif %}
+    </main>
+</div>
+
+{% endblock %}

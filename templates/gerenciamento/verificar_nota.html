@@ -2,44 +2,43 @@
 {% load static %}
 {% block content %}
 
-    <div class="container">
-        <!-- Menu Lateral -->
-        {% include 'gerenciamento/partials/_menu_lateral.html'%}
-        <!-- Conteúdo Principal -->
-        <main class="content">
-            <h2>Verificar Notas da Turma</h2>
+<div class="container">
+    <!-- Menu Lateral -->
+    {% include 'gerenciamento/partials/_menu_lateral.html'%}
+    <!-- Conteúdo Principal -->
+    <main class="content">
+        <h2>Verificar Notas da Turma</h2>
 
-            <!-- Seleção de Turma -->
-            <form action="#" method="POST" class="grades-check-form">
-                {% csrf_token %}
-                <label for="turma">Selecione a Turma:</label>
-                <select id="turma" name="turma">
-                    {% for turma in turmas %}
-                        <option value="{{ turma.id }}">{{ turma.nome }} - {{ turma.ano }} - {{ turma.periodo }}</option>
-                    {% endfor %}
-                </select>
-            </form>
+        <!-- Seleção de Turma -->
+        <form action="#" method="POST" class="grades-check-form">
+            {% csrf_token %}
+            <label for="turma">Selecione a Turma:</label>
+            <select id="turma" name="turma">
+                {% for turma in turmas %}
+                <option value="{{ turma.id }}">{{ turma.nome }} - {{ turma.ano }} - {{ turma.periodo }}</option>
+                {% endfor %}
+            </select>
+        </form>
 
-            <!-- Tabela de Notas -->
-            <table class="grades-table">
-                <thead>
-                    <tr>
-                        <th>Nome do Aluno</th>
-                        <th>Nota</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for nota in notas %}
-                            <tr>
-                                <td>{{ nota.matricula.aluno.nome }}</td>
-                                <td>{{ nota.nota }}</td>
-                            </tr>
-                        {% endfor %}
-                </tbody>
-            </table>
+        <!-- Tabela de Notas -->
+        <table class="grades-table">
+            <thead>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nota in notas %}
+                <tr>
+                    <td>{{ nota.matricula.aluno.nome }}</td>
+                    <td>{{ nota.nota }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-        </main>
-    </div>
+    </main>
+</div>
 
 {% endblock %}
-

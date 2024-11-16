@@ -78,11 +78,24 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+       'default': {
+           'ENGINE': 'djongo',
+           'NAME': 'sistema-gerenciamento-notas',
+           "CLIENT":{
+               'host': str(os.getenv('HOST')),
+               'username': str(os.getenv('USER_DB')),
+               'password':str(os.getenv('PASSWORD_DB')),
+           }
+       }
+   }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

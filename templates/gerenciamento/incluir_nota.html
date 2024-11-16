@@ -25,14 +25,14 @@
                             <th>Nota</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {% for aluno in alunos %}
+                    {% for aluno, matricula in alunos_com_matriculas %}
                         <tr>
                             <td>{{ aluno.nome }}</td>
-                            <td><input type="number" name="nota_{{ aluno.id }}" min="0" max="10" step="0.1" required></td>
+                            <td>
+                                <input type="number" name="nota_{{ aluno.id }}" min="0" max="10" step="0.1" required>
+                            </td>
                         </tr>
                         {% endfor %}
-                    </tbody>
                 </table>
 
                 <button type="submit">Salvar Notas</button>
